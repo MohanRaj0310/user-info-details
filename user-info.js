@@ -33,3 +33,38 @@ const createUserDetails = (firstName, lastName, phoneNumber, emailId, address) =
         });
 }
 
+function firstNameValidation(inputText){
+  let textVal2 = inputText
+  console.log(inputText)
+  if(textVal2.value.length >=3){///
+      console.log('last name validation success')
+  }else {
+      alert('make sure the input should be upto 3 characters')
+  }
+}
+
+function lastNameValidation(inputText){
+  let textVal1 = inputText
+  if(textVal1.value.length >=3){
+      console.log('last name validation success')
+  }else {
+      alert('make sure the input should be upto 3 characters')
+  }
+}
+
+function phoneNum(inputNum){
+  let phoneNum = /^\d{10}$/;
+  if(inputNum.value.match(phoneNum)){
+      return true
+  } else {
+      alert('phone must be 10 digit')
+      return false
+  }
+}
+
+function validateEmail(email) {
+  const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailFormat.test(String(email).toLowerCase());
+}
+
+
